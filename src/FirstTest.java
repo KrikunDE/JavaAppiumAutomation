@@ -3,6 +3,7 @@ import io.appium.java_client.android.AndroidDriver;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.URL;
@@ -34,6 +35,8 @@ public class FirstTest {
 
     @Test
     public void firstTest() {
+        WebElement element = driver.findElementByXPath("//*[contains(@text, 'SKIP')]");
+        element.click();
         System.out.println("FirstTestRun");
     }
 
