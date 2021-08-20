@@ -26,6 +26,9 @@ public class FirstTest {
         capabilities.setCapability("app", "/Users/dkrykun/Downloads/apk/wiki.apk");
 
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+
+
+
     }
 
     @After
@@ -34,7 +37,7 @@ public class FirstTest {
     }
 
     @Test
-    public void firstTest() {
+    public void firstTest() { //search & click item SKIP
         WebElement element = driver.findElementByXPath("//*[contains(@text, 'SKIP')]");
         element.click();
         System.out.println("FirstTestRun");
