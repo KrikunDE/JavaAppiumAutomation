@@ -2,6 +2,8 @@ package lib;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import junit.framework.TestCase;
+import junit.framework.TestResult;
+import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import java.net.URL;
 
@@ -37,7 +39,7 @@ public class CoreTestCase extends TestCase {
 //        capabilities.setCapability("app", "/Users/dkrykun/Downloads/apk/wiki.apk");
 
         driver = new AndroidDriver(new URL(AppiumURL), capabilities);
-
+        this.rotateScreenPortrait();
 
     }
 
@@ -48,7 +50,27 @@ public class CoreTestCase extends TestCase {
         super.tearDown();
     }
 
+    @Override // IV lesson
+    protected TestResult createResult() {
+        return super.createResult();
+    }
 
+
+    protected void rotateScreenPortrait () {
+
+        driver.rotate(ScreenOrientation.PORTRAIT);
+
+    }
+
+    protected void rotateScreenLandscape () {
+        driver.rotate(ScreenOrientation.LANDSCAPE);
+
+    }
+    protected void runAppInBacground () {
+
+        driver.runAppInBackground(2);
+
+    }
 
 }
 

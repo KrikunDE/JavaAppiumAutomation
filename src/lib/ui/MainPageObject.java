@@ -146,6 +146,14 @@ public class MainPageObject {
                 ExpectedConditions.invisibilityOfElementLocated(by));
     }
 
+
+
+
+
+
+
+    // method's overloading
+
     public WebElement WaitForElementPresentByXpath(String xpath, String error_message, long timeoutInSeconds) {
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
         wait.withMessage(error_message + "\n");
@@ -160,6 +168,8 @@ public class MainPageObject {
         return WaitForElementPresentByXpath(xpath, error_message, 5);
 
     }
+
+
 
     public boolean WaitForElementNotPresentByXpath(String xpath, String error_message, long timeoutInSeconds) {
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
